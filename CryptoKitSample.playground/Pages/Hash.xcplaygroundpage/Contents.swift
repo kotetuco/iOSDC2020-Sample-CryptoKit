@@ -29,7 +29,7 @@ print(hashA == hashC) // true
 
 hashメソッドの戻り値は `SHA256.Digest` 型となっている。アプリによってはサーバなどとの連携のためにData型やString型へ変換する必要が発生するかもしれない。
 
-Apple CryptoKitではData型へはDataのイニシャライザにSHA256.Digest型をそのまま指定することで変換可能。
+Apple CryptoKitではData型へはDataのイニシャライザにSHA256.Digest型をそのまま指定することで変換可能(SHA256.Digest型はDataProtocolに準拠しているため)。
 
 String型への変換については少し手間がかかり、compactMapを使って[UInt8]型へ変換した上で `%02x` ひとつひとつStringへ変換していく必要がある。
 */
